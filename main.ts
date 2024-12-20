@@ -10,7 +10,7 @@ export function exec(command: string){
     }
   
     // the *entire* stdout and stderr (buffered)
-    //console.log(`${stdout}`);
+    console.log(`${stdout}`);
     //console.log(`stderr: ${stderr}`);
   });
 }
@@ -23,11 +23,9 @@ commands.elements.forEach(element => {
   element.buttons.forEach(element => {
     let style = "";
     if (element.image != undefined) {
-      //element.name = '<img style="width : 30px;" src="static/' + element.image + '">' //
       style = 'style="width : 100px; height : 74px;  background: url(static/' + element.image + '); background-repeat: no-repeat; background-size: auto 100%; background-position: center center;"';
       element.name = "";
     }
-   console.log(element.name);
     switch (element.type) {
       case "Folder":
         basehtml = basehtml + '<a href="' + element.name + '" class="button">' + element.name + '</a>';
@@ -52,13 +50,13 @@ commands.elements.forEach(element => {
   Deno.writeTextFile("pages/" + element.name + ".html", basehtml);
 });
 
-//exec('qrencode -m 2 -t utf8 "http://192.168.0.105:8000"');
+exec('qrencode -m 2 -t utf8 "http://192.168.0.105:8000"');
 Deno.serve((req) => {
   let body;
   const url = new URL(req.url);
-  console.log(url.pathname);
+  //console.log(url.pathname);
   if (url.pathname.match(".png")) {
-    console.log(url.pathname.replace("/s", "s"));
+    //console.log(url.pathname.replace("/s", "s"));
     body = Deno.readFileSync(url.pathname.replace("/s", "s"));
   }
   else {
@@ -79,7 +77,7 @@ Deno.serve({ port: 4242 }, (req) => {
     console.log("A client just connected!");
   });*/
   socket.addEventListener("message", (event) => {
-    console.log(event.data);
+    //console.log(event.data);
     exec(event.data);
   });
   /*socket.addEventListener("close", () => {
