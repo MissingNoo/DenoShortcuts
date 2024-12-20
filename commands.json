@@ -1,0 +1,153 @@
+{
+	"elements" : [
+		{
+			"name" : "Home",
+			"buttons" : [
+				{
+					"type" : "Folder",
+					"name" : "Krita"
+				},
+				{
+					"type" : "Folder",
+					"name" : "Programs"
+				},
+				{
+					"type" : "Folder",
+					"name" : "Wacom"
+				}
+			]
+		},
+		{
+			"name" : "Krita",
+			"buttons" : [
+				{
+					"type" : "Button",
+					"up" : "ydotool key 29:0",
+					"down" : "ydotool key 29:1",
+					"name" : "Ctrl"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 29:1 44:1 29:0 44:0",
+					"name" : "Ctrl Z"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 29:1 42:1 44:1 29:0 42:0 44:0",
+					"name" : "Ctrl Shift Z"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 16:1 16:0",
+					"name" : "Q"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 17:1 17:0",
+					"name" : "W"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 110:1 110:0",
+					"name" : "New Layer"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 104:1 104:0",
+					"name" : "Next Layer"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 109:1 109:0",
+					"name" : "Last Layer"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 29:1 42:1 35:1 29:0 42:0 35:0",
+					"name" : "Flip Layers"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 29:1 109:1 29:0 109:0",
+					"name" : "Move Layer Down"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 29:1 104:1 29:0 104:0",
+					"name" : "Move Layer Up"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 42:1 111:1 42:0 111:0",
+					"name" : "Delete Layer"
+				},
+				{
+					"type" : "Button",
+					"up" : "ydotool key 48:1 48:0",
+					"name" : "Brush"
+				}
+			]
+		},
+		{
+			"name" : "Programs",
+			"buttons" : [
+				{
+					"type" : "Button",
+					"up" : "aseprite",
+					"name" : "Ase prite"
+				},
+				{
+					"type" : "Button",
+					"up" : "krita",
+					"name" : "Krita"
+				},
+				{
+					"type" : "Button",
+					"up" : "obs",
+					"name" : "OBS Studio"
+				},
+				{
+					"type" : "Button",
+					"up" : "",
+					"name" : "Test"
+				}
+			]
+		},
+		{
+			"name" : "Wacom",
+			"buttons" : [
+				{
+					"type" : "Button",
+					"up" : "swaymsg input 1386:890:Wacom_One_by_Wacom_S_Pen map_from_region 00x00mm 66.4x45.24mm",
+					"name" : "Osu mode",
+					"image" : "osu.png"
+				},
+				{
+					"type" : "Button",
+					"up" : "swaymsg input 1386:890:Wacom_One_by_Wacom_S_Pen map_from_region 40x15mm 106.4x60.24mm",
+					"name" : "Osu mode center"
+				},
+				{
+					"type" : "Button",
+					"up" : "swaymsg input 1386:890:Wacom_One_by_Wacom_S_Pen map_from_region 0x0 1x0.9",
+					"name" : "Draw Mode"
+				},
+				{
+					"type" : "Button",
+					"up" : "swaymsg input 1386:890:Wacom_One_by_Wacom_S_Pen map_to_output HDMI-A-1",
+					"name" : "Map Output"
+				},
+				{
+					"type" : "Button",
+					"up" : "swaymsg input 1386:890:Wacom_One_by_Wacom_S_Pen left_handed enable",
+					"name" : "Left Hand"
+				},
+				{
+					"type" : "Button",
+					"up" : "swaymsg input 1386:890:Wacom_One_by_Wacom_S_Pen left_handed disable",
+					"name" : "Right Hand"
+				}
+			]
+		}
+	]
+}
