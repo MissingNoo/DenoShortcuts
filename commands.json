@@ -5,14 +5,17 @@
       "buttons": [
         {
           "type": "Folder",
+          "up": "",
           "name": "Krita"
         },
         {
           "type": "Folder",
+          "up": "",
           "name": "Programs"
         },
         {
           "type": "Folder",
+          "up": "",
           "name": "Wacom"
         }
       ]
