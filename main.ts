@@ -17,10 +17,41 @@ export function exec(command: string, show_output = false) {
 }
 
 commands.elements.forEach((element) => {
-  let basehtml =
-    '<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">  <title>WebSocket Demo</title>  </head><style> a.button {    padding: 1px 6px;    border: 1px outset buttonborder;    border-radius: 3px;    color: buttontext;    background-color: buttonface;    text-decoration: none;}  body {    background-color: black;  }  button {    margin-top: 5px;    padding: 29px;    background-color: black;    color: white;  }</style><body>\n';
+  let basehtml = `<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+          <title>WebSocket Demo</title>
+        </head>
+        <style>
+          a.button {    
+            border-style: solid;
+            border-width: 1px;
+            border-color: white;
+            margin-top: 5px;
+            padding: 29px;
+            background-color: black;
+            color: white;
+          }  
+          body {    
+            background-color: black;
+          }  
+          button {
+            border-style: solid;
+            border-color: white;
+            border-width: 1px;
+            margin-top: 5px;
+            padding: 29px;
+            background-color: black;
+            color: white;
+          }
+        </style>
+        <body>\n`;
   if (element.name != "Home") {
-    basehtml = basehtml + '<a href="Home" class="button">Back</a>\n';
+    basehtml = basehtml + `
+      <a href="#" class="button" onClick="requestFullScreen();">#</a>
+      <a href="Home" class="button">Back</a>\n`;
   }
   element.buttons.forEach((element) => {
     let style = "";
@@ -41,7 +72,32 @@ commands.elements.forEach((element) => {
     }
   });
   basehtml = basehtml +
-    "<script> let socket = new WebSocket('ws://192.168.0.105:4242');";
+    `<script>
+       let socket = new WebSocket('ws://192.168.0.105:4242');
+       function requestFullScreen() {
+
+  var el = document.body;
+
+  // Supports most browsers and their versions.
+  var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen 
+  || el.mozRequestFullScreen || el.msRequestFullScreen;
+
+  if (requestMethod) {
+
+    // Native full screen.
+    requestMethod.call(el);
+
+  } else if (typeof window.ActiveXObject !== "undefined") {
+
+    // Older IE.
+    var wscript = new ActiveXObject("WScript.Shell");
+
+    if (wscript !== null) {
+      wscript.SendKeys("{F11}");
+    }
+  }
+}
+`;
   element.buttons.forEach((element) => {
     switch (element.type) {
       case "Folder":
