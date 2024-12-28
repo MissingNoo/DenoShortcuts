@@ -142,10 +142,6 @@ Deno.serve((req) => {
     //console.log("favicon");
     body = Deno.readFileSync("static/favicon.ico");
   } else {
-    //console.log(pages[url.pathname.replace("/", "")]);
-    /*body = `
-      <div dangerouslySetInnerHTML={{ __html: endresult }}>
-      </div>`;*/
     const obody = pages[url.pathname.replace("/", "")];
     Deno.writeTextFileSync("/tmp/page.html", obody);
     body = Deno.readFileSync("/tmp/page.html");
@@ -153,16 +149,6 @@ Deno.serve((req) => {
       body = "Page not found!";
       status = 400;
     }
-    //body = pages[url.pathname.replace("/", "")];
-    //console.log(body);
-    /*const path = "pages" + url.pathname + ".html";
-    const pathFound = existsSync(path);
-    if (pathFound) {
-      body = Deno.readFileSync(path);
-    } else {
-      body = "Page not found!";
-      status = 400;
-    }*/
   }
   return new Response(body, {
     status: status,
