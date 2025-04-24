@@ -25,69 +25,81 @@
       "buttons": [
         {
           "type": "Button",
-          "up": "ydotool key 29:0",
-          "down": "ydotool key 29:1",
-          "name": "Ctrl"
-        },
-        {
-          "type": "Button",
-          "up": "ydotool key 29:1 44:1 29:0 44:0",
-          "name": "Undo"
-        },
-        {
-          "type": "Button",
-          "up": "ydotool key 29:1 42:1 44:1 29:0 42:0 44:0",
-          "name": "Redo"
-        },
-        {
-          "type": "Button",
           "up": "ydotool key 16:1 16:0",
-          "name": "-"
+          "name": "-",
+          "show": "<i class=\"fa-solid fa-magnifying-glass-minus fa-xl\"></i>"
         },
         {
           "type": "Button",
           "up": "ydotool key 17:1 17:0",
-          "name": "+"
+          "name": "+",
+          "show": "<i class=\"fa-solid fa-magnifying-glass-plus fa-xl\"></i>"
         },
         {
           "type": "Button",
           "up": "ydotool key 110:1 110:0",
-          "name": "New Layer"
-        },
-        {
-          "type": "Button",
-          "up": "ydotool key 104:1 104:0",
-          "name": "Next Layer"
-        },
-        {
-          "type": "Button",
-          "up": "ydotool key 109:1 109:0",
-          "name": "Last Layer"
-        },
-        {
-          "type": "Button",
-          "up": "ydotool key 29:1 42:1 35:1 29:0 42:0 35:0",
-          "name": "Flip Layers"
-        },
-        {
-          "type": "Button",
-          "up": "ydotool key 29:1 109:1 29:0 109:0",
-          "name": "Move Layer Down"
-        },
-        {
-          "type": "Button",
-          "up": "ydotool key 29:1 104:1 29:0 104:0",
-          "name": "Move Layer Up"
+          "name": "New Layer",
+          "show": "<i class=\"fa-solid fa-layer-group fa-2xl\"></i><i class=\"fa-solid fa-plus fa-2xl\"></i>"
         },
         {
           "type": "Button",
           "up": "ydotool key 42:1 111:1 42:0 111:0",
-          "name": "Delete Layer"
+          "name": "Delete Layer",
+          "show": "<i class=\"fa-solid fa-layer-group fa-2xl\"></i><i class=\"fa-solid fa-trash fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 104:1 104:0",
+          "name": "Next Layer",
+          "show": "<i class=\"fa-solid fa-layer-group fa-2xl\"></i><i class=\"fa-solid fa-up-long fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 109:1 109:0",
+          "name": "Last Layer",
+          "show": "<i class=\"fa-solid fa-layer-group fa-2xl\"></i><i class=\"fa-solid fa-down-long fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 29:1 42:1 35:1 29:0 42:0 35:0",
+          "name": "Flip Layers",
+          "show": "<i class=\"fa-solid fa-layer-group fa-2xl\"></i><i class=\"fa-solid fa-right-left fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 29:1 109:1 29:0 109:0",
+          "name": "Move Layer Down",
+          "show": "<i class=\"fa-solid fa-layer-group fa-2xl\"></i><i class=\"fa-solid fa-turn-down fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 29:1 104:1 29:0 104:0",
+          "name": "Move Layer Up",
+          "show": "<i class=\"fa-solid fa-layer-group fa-2xl\"></i><i class=\"fa-solid fa-turn-up fa-2xl\"></i>"
         },
         {
           "type": "Button",
           "up": "ydotool key 48:1 48:0",
-          "name": "Brush"
+          "name": "Brush",
+          "show": "<i class=\"fa-solid fa-paintbrush fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 18:1 18:0",
+          "name": "Eraser",
+          "show": "<i class=\"fa-solid fa-eraser fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 29:1 44:1 29:0 44:0",
+          "name": "Undo",
+          "show": "<i class=\"fa-solid fa-rotate-left fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 29:1 42:1 44:1 29:0 42:0 44:0",
+          "name": "Redo",
+          "show": "<i class=\"fa-solid fa-rotate-right fa-2xl\"></i>"
         }
       ]
     },
