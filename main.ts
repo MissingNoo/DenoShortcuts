@@ -1,21 +1,20 @@
 import * as child_process from "node:child_process";
 import commands from "./commands.json" with { type: "json" };
-import html from "./html.json" with  {type: "json"};
-
+import html from "./html.json" with { type: "json" };
+if (Deno.args[0] != undefined) {
+  Deno.env.set("ip", Deno.args[0]);
+}
 // deno-lint-ignore prefer-const no-explicit-any
 let pages: any = {};
-
-export function exec(command: string, show_output = false) {
+function exec(command: string, show_output = false) {
   child_process.exec(command, (err, stdout, _stderr) => {
     if (err) {
       // node couldn't execute the command
       return;
     }
-    // the *entire* stdout and stderr (buffered)
     if (show_output) {
       console.log(`${stdout}`);
     }
-    console.log(`stderr: ${_stderr}`);
   });
 }
 
@@ -37,23 +36,30 @@ function generate_page(name: string) {
         }*/
         switch (element.type) {
           case "Folder":
-            basehtml += '<a href="' + element.name + '" class="button"><i class="fa-solid fa-folder-open"></i>' + element.name + "</a>\n";
+            basehtml += '<a href="' + element.name +
+              '" class="button"><i class="fa-solid fa-folder-open"></i>' +
+              element.name + "</a>\n";
             break;
           default:
             if (element.show == undefined) {
               element.show = element.name;
             }
-            basehtml += "<button " + style + ' id="' + element.name + '"> ' + element.show + " </button>\n";
+            basehtml += "<button " + style + ' id="' + element.name + '"> ' +
+              element.show + " </button>\n";
             break;
         }
       });
+      basehtml += "<script> let socket = new WebSocket('ws://" +
+        Deno.env.get("ip") + ":4242'); </script>";
       basehtml += fullscreen_button;
       element.buttons.forEach((element) => { //Adds Javascript for the buttons
         switch (element.type) {
           case "Folder":
             break;
           default:
-            basehtml += "document.getElementById('" + element.name + "').addEventListener('click', () => { socket.send('" + element.up + "'); });\n";
+            basehtml += "document.getElementById('" + element.name +
+              "').addEventListener('click', () => { socket.send('" +
+              element.up + "'); });\n";
             break;
         }
       });
@@ -67,7 +73,7 @@ commands.elements.forEach((element) => {
   generate_page(element.name);
 });
 
-exec('qrencode -m 2 -t utf8 "http://192.168.0.108:8000"', true);
+exec('qrencode -m 2 -t utf8 "http://' + Deno.env.get("ip") + ':8000"', true);
 Deno.serve((req) => {
   let body;
   let status = 200;
@@ -97,7 +103,7 @@ Deno.serve({ port: 4242 }, (req) => {
   }
   const { socket, response } = Deno.upgradeWebSocket(req);
   socket.addEventListener("message", (event) => {
-    console.log(event.data);
+    //console.log(event.data);
     exec(event.data);
   });
   return response;

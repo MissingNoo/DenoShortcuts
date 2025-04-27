@@ -1,9 +1,9 @@
 {
-    "page_start" : "<!DOCTYPE html><head><script src=\"https://kit.fontawesome.com/521e685616.js\" crossorigin=\"anonymous\"></script><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, height=device-height, initial-scale=1\"><title>WebSocket Demo</title></head><style> a.button { border-style: solid; border-width: 1px; border-color: white; margin-top: 5px; padding: 29px; background-color: black; color: white; } body { background-color: black; } button { border-style: solid; border-color: white; border-width: 1px; margin-top: 5px; padding: 29px; background-color: black; color: white; } </style> <body>\n",
+  "page_start": "<!DOCTYPE html><head><script src=\"https://kit.fontawesome.com/521e685616.js\" crossorigin=\"anonymous\"></script><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, height=device-height, initial-scale=1\"><title>WebSocket Demo</title></head><style> a.button { border-style: solid; border-width: 1px; border-color: white; margin-top: 5px; padding: 29px; background-color: black; color: white; } body { background-color: black; } button { border-style: solid; border-color: white; border-width: 1px; margin-top: 5px; padding: 29px; background-color: black; color: white; } </style> <body>\n",
 
-    "back_button" : "<a href=\"#\" class=\"button\" onClick=\"requestFullScreen();\"><i class=\"fa-solid fa-expand fa-2xl\"></i></a><a href=\"Home\" class=\"button\"><i class=\"fa-solid fa-house fa-2xl\"></i></a>\n",
+  "back_button": "<a href=\"#\" class=\"button\" onClick=\"requestFullScreen();\"><i class=\"fa-solid fa-expand fa-2xl\"></i></a><a href=\"Home\" class=\"button\"><i class=\"fa-solid fa-house fa-2xl\"></i></a>\n",
 
-    "fullscreen_button" : "<script> let socket = new WebSocket('ws://192.168.0.108:4242'); function requestFullScreen() { var el = document.body; var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen; if (requestMethod) { requestMethod.call(el); } else if (typeof window.ActiveXObject !== \"undefined\") { var wscript = new ActiveXObject(\"WScript.Shell\"); if (wscript !== null) { wscript.SendKeys(\"{F11}\"); } } }",
+  "fullscreen_button": "<script> function requestFullScreen() { var el = document.body; var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen; if (requestMethod) { requestMethod.call(el); } else if (typeof window.ActiveXObject !== \"undefined\") { var wscript = new ActiveXObject(\"WScript.Shell\"); if (wscript !== null) { wscript.SendKeys(\"{F11}\"); } } }",
 
-    "page_end" : "</script></body></html>"
+  "page_end": "</script></body></html>"
 }
