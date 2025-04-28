@@ -25,6 +25,18 @@
       "buttons": [
         {
           "type": "Button",
+          "up": "ydotool key 15:1 15:0",
+          "name": "ktab",
+          "show": "<i class=\"fa-solid fa-expand fa-xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 56:1 15:1 15:0 56:0",
+          "name": "tab",
+          "show": "<i class=\"fa-solid fa-arrow-right-arrow-left fa-xl\"></i>"
+        },
+        {
+          "type": "Button",
           "up": "ydotool key 16:1 16:0",
           "name": "-",
           "show": "<i class=\"fa-solid fa-magnifying-glass-minus fa-xl\"></i>"
@@ -76,6 +88,12 @@
           "up": "ydotool key 29:1 104:1 29:0 104:0",
           "name": "Move Layer Up",
           "show": "<i class=\"fa-solid fa-layer-group fa-2xl\"></i><i class=\"fa-solid fa-turn-up fa-2xl\"></i>"
+        },
+        {
+          "type": "Button",
+          "up": "ydotool key 33:1 33:0",
+          "name": "PaintBucket",
+          "show": "<i class=\"fa-solid fa-fill-drip fa-2xl\"></i>"
         },
         {
           "type": "Button",
